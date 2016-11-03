@@ -11,15 +11,11 @@ I plan to make an installation script later.
 
 *Pre-requisites:*
 Following packages must be installed in order for it to work:
-`
-1. xbacklight
-2. compton
-3. rofi
-`
+
+`xbacklight compton rofi`
+
 
 ###*Z-Shell*
 *Pre-requisites:*
 Following packages must be installed in order for it to work:
-`
-1. oh-my-zsh
-`
+`oh-my-zsh`
