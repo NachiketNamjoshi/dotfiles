@@ -16,3 +16,10 @@ Following packages must be installed in order for it to work:
 2. compton
 3. rofi
 `
+
+###*Z-Shell*
+*Pre-requisites:*
+Following packages must be installed in order for it to work:
+`
+1. oh-my-zsh
+`
