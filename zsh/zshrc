@@ -7,7 +7,7 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="jonathan"
+ZSH_THEME="powerline"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -114,7 +114,7 @@ export GPG_TTY=`tty`
 export GPG_AGENT_INFO
 
 # THE_FUCK
-eval $(thefuck --alias)
+#eval $(thefuck --alias)
 
 # SDK
 export ANDROID_HOME="/home/nachiket/Android/android-sdk-linux"
@@ -122,3 +122,21 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 #NDK
 export NDK="/home/nachiket/Android/android-ndk-r13"
 export PATH=$PATH:$NDK
+
+# home/bin
+export PATH=$PATH:/home/nachiket/bin/
+
+export TERM="xterm-256color"
+
+# Load pyenv automatically by adding
+# the following to ~/.zshrc:
+
+export PATH="/home/nachiket/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
+## Git-completion
+if [ -f ~/.git-completion.zsh ]; then
+source ~/.git-completion.zsh
+fi
