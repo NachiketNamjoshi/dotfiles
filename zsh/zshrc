@@ -7,7 +7,7 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerline"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -54,6 +54,47 @@ ZSH_THEME="powerline"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+
+# powerlevelOver9000
+
+# Configuracion POWERLVEL9K
+POWERLEVEL9K_MODE='awesome-patched'
+
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
+
+# Elementos de la barra
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv virtualenv vi_mode)
+POWERLEVEL9K_STATUS_VERBOSE=false
+
+POWERLEVEL9K_DIR_HOME_BACKGROUND='09'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='09'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='009'
+POWERLEVEL9K_DIR_HOME_FOREGROUND='236'
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='236'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='236'
+
+# `git hub colors`
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='236'
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='119'
+POWERLEVEL9K_VCS_CLEAN_FOREGROUND='236'
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='214'
+POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='236'
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='196'
+POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='236'
+
+# Quitar iconos del inicio
+POWERLEVEL9K_HOME_ICON=''
+POWERLEVEL9K_HOME_SUB_ICON=''
+POWERLEVEL9K_FOLDER_ICON=''
+
+# Vi-Mode
+POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='005'
+POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='236'
+POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='245'
+POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='236'
 
 # User configuration
 
@@ -114,7 +155,7 @@ export GPG_TTY=`tty`
 export GPG_AGENT_INFO
 
 # THE_FUCK
-#eval $(thefuck --alias)
+eval $(thefuck --alias)
 
 # SDK
 export ANDROID_HOME="/home/nachiket/Android/android-sdk-linux"
@@ -128,31 +169,75 @@ export PATH=$PATH:/home/nachiket/bin/
 
 export TERM="xterm-256color"
 
-# Load pyenv automatically by adding
-# the following to ~/.zshrc:
 
-export PATH="/home/nachiket/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+#if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+	#exec startx
+#fi
 
+#Basic Aliases
+alias v="vim"
+alias sv="sudo vim"
+alias ls='ls --color=auto --group-directories-first'
+alias lsa='ls -A'
+alias b="cd .. && ls -a"
+alias q="exit"
+alias e="exit"
 
-## Git-completion
-if [ -f ~/.git-completion.zsh ]; then
-source ~/.git-completion.zsh
-fi
+alias PS="sudo pacman -S"
+alias PRns="sudo pacman -Rns"
+alias PSyu="sudo pacman -Syu"
+alias PSyyu="sudo pacman -Syyu"
+alias PQn="sudo pacman -Qn"
 
+#Term only
+alias mute="pamixer -m"
+alias vd="pamixer -d 10"
+alias vu="pamixer -i 10"
+alias p="mocp -G &> /dev/null"
+alias next="mocp -f &> /dev/null"
+alias prev="mocp -r &> /dev/null"
+alias mnt="sudo bash ~/.config/Scripts/mount.sh"
+alias umnt="sudo bash ~/.config/Scripts/unmount.sh"
+alias newnet="sudo systemctl restart NetworkManager"
 
-# pacman aliases (if desired, adapt for your favourite AUR helper)
-alias pac="sudo /usr/bin/pacman -S"		# default action	- install one or more packages
-alias pacu="sudo /usr/bin/pacman -Syu"		# '[u]pdate'		- upgrade all packages to their newest version
-alias pacr="sudo /usr/bin/pacman -Rns"		# '[r]emove'		- uninstall one or more packages
-alias pacs="/usr/bin/pacman -Ss"		# '[s]earch'		- search for a package using one or more keywords
-alias paci="/usr/bin/pacman -Si"		# '[i]nfo'		- show information about a package
-alias paclo="/usr/bin/pacman -Qdt"		# '[l]ist [o]rphans'	- list all packages which are orphaned
-alias pacc="sudo /usr/bin/pacman -Scc"		# '[c]lean cache'	- delete all not currently installed package files
-alias paclf="/usr/bin/pacman -Ql"		# '[l]ist [f]iles'	- list all files installed by a given package
-alias pacexpl="sudo /usr/bin/pacman -D --asexp"	# 'mark as [expl]icit'	- mark one or more packages as explicitly installed 
-alias pacimpl="sudo /usr/bin/pacman -D --asdep"	# 'mark as [impl]icit'	- mark one or more packages as non explicitly installed
+#etc
+alias screenfetch="screenfetch -t"
+alias yt="youtube-dl -ic"
+alias yta="youtube-dl -xic"
+alias ein="ssh -l einchan -p 22 104.238.215.7"
+alias starwars="telnet towel.blinkenlights.nl"
+alias youtube="youtube-viewer"
+alias YT="youtube-viewer"
+alias syt="youtube-viewer"
 
-# '[r]emove [o]rphans' - recursively remove ALL orphaned packages
-alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rns \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
+givegit() { git clone http://github.com/$1.git ;}
+weath() { curl wttr.in/$1 ;}
+alias h="cd ~ && ls -a"
+alias cf="cd ~/.config && ls -a"
+alias d="cd ~/Documents && ls -a"
+alias l="cd ~/Documents/LaTeX && ls -a"
+alias D="cd ~/Downloads && ls -a"
+alias pp="cd ~/Pictures && ls -a"
+alias pw="cd ~/Pictures/Wallpapers && ls -a"
+alias vv="cd ~/Videos && ls -a"
+alias m="cd ~/Music && ls -a"
+alias cfb="vim ~/.config/Scripts/bashrc"
+alias cfz="vim ~/.zshrc"
+alias cfv="vim ~/.vimrc"
+alias cfr="vim ~/.config/ranger/rc.conf.base"
+alias cfi="vim ~/.config/i3/config"
+alias cfq="vim ~/.config/qutebrowser/keys.conf.base"
+alias cfQ="vim ~/.config/qutebrowser/qutebrowser.conf"
+alias cfm="vim ~/.config/mutt/muttrc"
+alias cfM="vim ~/.moc/keymap"
+alias cff="vim ~/.config/Scripts/folders"
+alias cfc="vim ~/.config/Scripts/configs"
+alias cft="vim ~/.config/termite/config"
+alias cfT="vim ~/.tmux.conf"
+alias eb="vim ~/Documents/LaTeX/uni.bib"
+alias cfg="vim ~/.config/mutt/gmail.conf"
+alias cfC="vim ~/.config/mutt/cock.conf"
+alias cfa="vim ~/.config/mutt/aliases"
+export EDITOR=vim
+# MPD daemon start (if no other user instance exists)
+[ ! -s ~/.config/mpd/pid ] && mpd ~/.config/mpd/mpd.conf

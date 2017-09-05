@@ -1,0 +1,19 @@
+If you want to use my config, be sure to have the following:
+
+i3-gaps
+imagemagick and scrot (for the lock command)
+pulseaudio (for screencast or audio capture; athough if you know how, you can easily change it to your alsa if that's all you use.)
+
+Be also sure that the i3 folder is in your ~/.config directory.
+
+Naturally be sure to replace whatever equivalent programs you have (Firefox or Chromium for my Iceweasel) by changing the variables set at the beginning of file.
+
+This is also true of the screencast command (you'll obviously want to change the capture area unless you have a tiny 1280x800 screen like me).
+
+The GIMP window placement settings will also need some tinkering depending on your resolution.
+
+The mount script is just an example, and will not work on your USB drives. You can replace the UUIDs with the UUIDs of your own devices (and change where you want them mounted) to make it functional for you.
+
+Also, be sure to get the bumblebee-status (github.com/tobi-wan-kenobi/bumblebee-status) for the status bar, although be sure to change the theme to one of the defaults. (This may also require you to use pip to download some new Python modules (like netifaces or psutil).
+
+Ask on YouTube or by email (luke@lukesmith.xyz) if you have any questions!
