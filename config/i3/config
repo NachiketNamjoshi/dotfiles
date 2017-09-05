@@ -317,4 +317,5 @@ bindsym $mod+XF86HomePage	exec --no-startup-id $browser
 bindsym $mod+XF86WWW		exec --no-startup-id $browser
 
 bindsym XF86Calculator		exec $term -e qalc
-
+bindsym XF86MonBrightnessUp	exec --no-startup-id bash ~/.config/i3/brightness.sh inc
+bindsym XF86MonBrightnessDown	exec --no-startup-id bash ~/.config/i3/brightness.sh dec
