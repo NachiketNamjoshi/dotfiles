@@ -1,0 +1,13 @@
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
+/usr/lib/xfce-polkit/xfce-polkit &
+nm-applet &
+pa-applet &
+redshift-gtk &
+compton --config ~/.config/compton.conf -b
+plank &
+tint2 &
+nitrogen --restore
+conky -c ~/.conky/conkyrc &
+conky -c ~/.conky/cpumemrc&
+polybar top &
+mpd ~/.config/mpd/mpd.conf
