@@ -1,44 +1,59 @@
-" Identify platform
-silent function! OSX()
-  return has('macunix')
-endfunction
-silent function! LINUX()
-  return has('unix') && !has('macunix') && !has('win32unix')
-endfunction
-silent function! WINDOWS()
-  return (has('win16') || has('win32') || has('win64'))
-endfunction
-silent function! GUI()
-  return (has('gui_running'))
-endfunction
-
-" Multiplatform compatibility
-if WINDOWS()
-  " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
-  " across (heterogeneous) systems easier.
-  set rtp=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-endif
-
-source $HOME/.vim/bundles.vim
-source $HOME/.vim/settings.vim
-source $HOME/.vim/map.vim
-source $HOME/.vim/plugins.vim
-source $HOME/.vim/functions.vim
-source $HOME/.vim/autocmd.vim
-
-filetype plugin indent off
-syntax off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'tpope/vim-fugitive'
-
-call vundle#end()
-
-
-filetype plugin indent on
+execute pathogen#infect()
+filetype on
 syntax on
+set background=dark
+let g:gruvbox_contrast_dark = 'hard'
+set number
+set hidden
+set history=100
+filetype indent on
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set autoindent
+autocmd BufWritePre * :%s/\s\+$//e
+set hlsearch
+set showmatch
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" syntastic_configs_lie_here
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"  Lightline
+let g:lightline = {
+      \ 'colorscheme' : 'jellybeans',
+      \}
+
+" NERD Commenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
