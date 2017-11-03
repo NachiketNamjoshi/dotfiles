@@ -1,0 +1,4 @@
+rofi.theme: /home/nachiket/.config/rofi/theme.css
+
+rofi.font: Space Mono 10
+rofi.separator-style: solid
