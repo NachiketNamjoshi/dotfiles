@@ -7,7 +7,7 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="darkblood"
+ZSH_THEME="imp"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -241,6 +241,9 @@ alias cfa="vim ~/.config/mutt/aliases"
 export EDITOR=vim
 
 export GPG_TTY=$(tty)
-
-clear
-neofetch
+alias vz="vim ~/.zshrc"
+alias voa="vim ~/.config/openbox/autostart"
+alias vt="vim ~/.config/termite/config"
+alias vp="vim ~/.config/polybar/config"
+alias ..='cd ..'
+alias wttr="curl wttr.in/pune"
