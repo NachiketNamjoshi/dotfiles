@@ -1,9 +1,12 @@
+let mapleader = "\<Space>"
+let maploacalleader = "\<Space>"
 execute pathogen#infect()
 filetype on
 syntax on
 set background=dark
 let g:gruvbox_contrast_dark = 'hard'
 set number
+set rnu
 set hidden
 set history=100
 filetype indent on
@@ -18,7 +21,7 @@ set hlsearch
 set showmatch
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
+" colorscheme minimalist
 " syntastic_configs_lie_here
 
 set statusline+=%#warningmsg#
@@ -30,10 +33,14 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-"  Lightline
-let g:lightline = {
-      \ 'colorscheme' : 'jellybeans',
-      \}
+"  airline
+let g:airline_theme='bubblegum'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+"NERD Tree Tabs
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_gui_startup=2
 
 " NERD Commenter
 " Add spaces after comment delimiters by default
@@ -57,3 +64,19 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
+
+
+" Key Maps
+
+nnoremap <leader>1 :norm i!<cr>
+nnoremap <leader>1 :norm i!<cr>
+vnoremap <leader>1 :norm i!<cr>
+nnoremap <leader>' :norm i"<cr>
+vnoremap <leader>' :norm i"<cr>
+nnoremap <leader>3 :norm i#<cr>
+vnoremap <leader>3 :norm i#<cr>
+nnoremap <leader>- :norm i--<cr>
+vnoremap <leader>- :norm i--<cr>
+nnoremap <leader>6 :norm ^x<cr>
+vnoremap <leader>5 :norm ^x<cr>
+nnoremap <leader>rv :source<Space>$MYVIMRC<cr>
