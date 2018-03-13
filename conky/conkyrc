@@ -1,134 +1,146 @@
-######################
-# - Conky settings - #
-######################
-update_interval 1
-total_run_times 0
-net_avg_samples 1
-cpu_avg_samples 1
-if_up_strictness link
+# Theme: CathexiS
+# Description: Simple, minimal, distraction free foundation for building your desktop experience...
+# Author: Samir Kahvedzic < akirapowered@gmail.com >
+# Web: http://samirkahvedzic.deviantart.com
 
-imlib_cache_size 0
-double_buffer yes
-no_buffers yes
 
-format_human_readable
+##############################################
+# Settings
+##############################################
 
-#####################
-# - Text settings - #
-#####################
+background yes
+
+# Use Xft?
 use_xft yes
-xftfont SFNS Display:size=8
-override_utf8_locale yes
-text_buffer_size 2048
+xftfont Coda:size=9
+xftalpha 1
 
-#############################
-# - Window specifications - #
-#############################
-own_window_class Conky
+# Update interval in seconds
+update_interval 1.0
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Create own window instead of using desktop (required in nautilus)
 own_window yes
-own_window_type desktop
 own_window_transparent yes
+own_window_type override
+
 own_window_argb_visual yes
-own_window_argb_value 200
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
-alignment top_left
-gap_x 25
-gap_y 65
-minimum_size 182 600
-maximum_width 182
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
 
-default_bar_size 60 8
+# Minimum size of text area
+minimum_size 200 200
+maximum_width 200
 
-#########################
-# - Graphics settings - #
-#########################
+# Draw shades?
 draw_shades no
 
-default_color cccccc
+# Draw outlines?
+draw_outline no
 
-color0 white
-color1 FFFFFF
-color2 white
-color3 FFFFFF
+# Draw borders around text
+draw_borders no
 
+# border width
+border_width 1
+
+# border margins
+border_margin 5
+
+# Stippled borders?
+stippled_borders 0
+
+# Default colors and also border colors
+default_color 666666
+own_window_colour 000000
+default_shade_color 000000
+default_outline_color 82828
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 10
+gap_y 30
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+use_spacer yes
+
+default_bar_size 200 3
+draw_graph_borders yes
+
+##############################################
+#  Output
+##############################################
 TEXT
-${font SFNS Display:style=Bold:size=8}SYSTEM $stippled_hr${font}
-##############
-# - SYSTEM - #
-##############
-${color0}${voffset 8}${offset 4}${font ConkyColorsLogos:size=9}a${font}${color}${voffset -16}
-${color0}${font ConkyColors:size=16}b${font}${color}
-${goto 32}${voffset -23}Kernel: ${alignr}${color2}${kernel}${color}
-${goto 32}Uptime: ${alignr}${color2}${uptime}${color}
-# |--BATTERY
-${if_existing /sys/class/power_supply/BAT1}${color0}${font ConkyColors:size=15}6${font}${color}${goto 32}${voffset -6}Battery: ${font SFNS Display:style=Bold:size=8}${color1}${battery_percent BAT1}%${color}${font} ${alignr}${color2}${battery_bar BAT1 8,60}${color}${else}${color0}${font ConkyColors:size=15}6${font}${color}${goto 32}${voffset -6}Battery: ${font SFNS Display:style=Bold:size=8}${color2}Unknown Status${color}${font}${endif}
-# |--PROC
-${voffset 4}${color0}${font ConkyColors:size=16}C${font}${color}${goto 32}${voffset -10}Processes: ${color2}${alignr 13}CPU${alignr}RAM${color}
-${voffset -1}${goto 42}${color2}${top name 1}${color}${font SFNS Display:style=Bold:size=8}${color1} ${goto 126}${top cpu 1}${alignr }${top mem 1}${color}${font}
-${voffset -1}${goto 42}${color2}${top name 2}${color}${font SFNS Display:style=Bold:size=8}${color1} ${goto 126}${top cpu 2}${alignr }${top mem 2}${color}${font}
-${voffset -1}${goto 42}${color2}${top name 3}${color}${font SFNS Display:style=Bold:size=8}${color1} ${goto 126}${top cpu 3}${alignr }${top mem 3}${color}${font}
-${voffset -1}${goto 42}${color2}${top name 4}${color}${font SFNS Display:style=Bold:size=8}${color1} ${goto 126}${top cpu 4}${alignr }${top mem 4}${color}${font}
-${voffset -1}${goto 42}${color2}${top name 5}${color}${font SFNS Display:style=Bold:size=8}${color1} ${goto 126}${top cpu 5}${alignr }${top mem 5}${color}${font}
-#############
-# - CLOCK - #
-#############
-${voffset 4}${font SFNS Display:style=Bold:size=8}DATE $stippled_hr${font}
-${voffset -2}${goto 32}${font SFNS Display:size=38}${color2}${time %H}${color}${font}
-${voffset -40}${goto 90}${font SFNS Display:style=Bold:size=11}${color2}${time :%M}${time :%S}${color}${font}
-${voffset -2}${goto 90}${font SFNS Display:style=Bold:size=8}${color2}${time %A}${color}${font}
-${goto 90}${time %d %b %Y}
-################
-# - CALENDAR - #
-################
-${voffset 2}${color0}${font ConkyColors:size=15}n${font}${voffset -9}${offset 1}${font SFNS Display:style=Bold:size=7}${offset -17}${voffset 4}${time %d}${font}${color}${voffset -1}${font Liberation Mono:size=7}${execpi 300 DJS=`date +%_d`; cal -s|sed '2,8!d'| sed '/./!d' | sed 's/^/${goto 42} /'| sed 's/$/ /' | sed 's/^/ /' | sed /" $DJS "/s/" $DJS "/" "'${font Arial:style=Bold:size=8}${voffset -2}${offset -4}${color1} '"$DJS"'${color}${font Liberation Mono:size=7}'" "/}${voffset -1}
-###############
-# - NETWORK - #
-###############
-${voffset -4}${font SFNS Display:style=Bold:size=8}NETWORK $stippled_hr${font}
-# |--wlp19s0
-${if_up wlp19s0}
-${voffset -5}${color0}${font ConkyColors:size=15}s${font}${color}${goto 32}${voffset -12}Up: ${font SFNS Display:style=Bold:size=8}${color1}${upspeed wlp19s0}${color}${font} ${alignr}${color2}${upspeedgraph wlp19s0 8,60 FFFFFF}${color}
-${goto 32}Total: ${font SFNS Display:style=Bold:size=8}${color2}${totalup wlp19s0}${color}${font}
-${voffset 2}${color0}${font ConkyColors:size=15}t${font}${color}${goto 32}${voffset -12}Down: ${font SFNS Display:style=Bold:size=8}${color1}${downspeed wlp19s0}${color}${font} ${alignr}${color2}${downspeedgraph wlp19s0 8,60 FFFFFF}${color}
-${goto 32}Total: ${font SFNS Display:style=Bold:size=8}${color2}${totaldown wlp19s0}${color}${font}
-${color0}${font ConkyColors:size=15}j${font}${color}${voffset -6}${goto 32}Signal: ${font SFNS Display:style=Bold:size=8}${color1}${wireless_link_qual_perc wlp19s0}%${color}${font} ${alignr}${color2}${wireless_link_bar 8,60 wlp19s0}${color}
-${voffset 2}${color0}${font ConkyColors:size=15}B${font}${color}${goto 32}${voffset -6}Local IP: ${alignr}${color2}${addr wlp19s0}${color}
-# |--enp7s0
-${else}${if_up enp7s0}
-${voffset -5}${color0}${font ConkyColors:size=15}s${font}${color}${goto 32}${voffset -12}Up: ${font SFNS Display:style=Bold:size=8}${color1}${upspeed enp7s0}${color}${font} ${alignr}${color2}${upspeedgraph enp7s0 8,60 FFFFFF}${color}
-${goto 32}Total: ${font SFNS Display:style=Bold:size=8}${color2}${totalup enp7s0}${color}${font}
-${voffset 4}${color0}${font ConkyColors:size=15}t${font}${color}${goto 32}${voffset -12}Down: ${font SFNS Display:style=Bold:size=8}${color1}${downspeed enp7s0}${color}${font} ${alignr}${color2}${downspeedgraph enp7s0 8,60 FFFFFF}${color}
-${goto 32}Total: ${font SFNS Display:style=Bold:size=8}${color2}${totaldown enp7s0}${color}${font}
-${voffset 2}${color0}${font ConkyColors:size=15}B${font}${color}${goto 32}${voffset -6}Local IP: ${alignr}${color2}${addr enp7s0}${color}
-# |--ENP4S0
-${else}${if_up enp4s0}
-${voffset -5}${color0}${font ConkyColors:size=15}s${font}${color}${goto 32}${voffset -12}Up: ${font SFNS Display:style=Bold:size=8}${color1}${upspeed enp4s0}${color}${font} ${alignr}${color2}${upspeedgraph enp4s0 8,60 FFFFFF}${color}
-${goto 32}Total: ${font SFNS Display:style=Bold:size=8}${color2}${totalup enp4s0}${color}${font}
-${voffset 2}${color0}${font ConkyColors:size=15}t${font}${color}${goto 32}${voffset -12}Down: ${font SFNS Display:style=Bold:size=8}${color1}${downspeed enp4s0}${color}${font} ${alignr}${color2}${downspeedgraph enp4s0 8,60 FFFFFF}${color}
-${goto 32}Total: ${font SFNS Display:style=Bold:size=8}${color2}${totaldown enp4s0}${color}${font}
-${voffset 4}${color0}${font ConkyColors:size=15}B${font}${color}${goto 32}${voffset -6}Local IP: ${alignr}${color2}${addr enp4s0}${color}
-# |--PPP0
-${else}${if_up ppp0}
-${voffset -5}${color0}${font ConkyColors:size=15}s${font}${color}${goto 32}${voffset -12}Up: ${font SFNS Display:style=Bold:size=8}${color1}${upspeed ppp0}${color}${font} ${alignr}${color2}${upspeedgraph ppp0 8,60 FFFFFF}${color}
-${goto 32}Total: ${font SFNS Display:style=Bold:size=8}${color2}${totalup ppp0}${color}${font}
-${voffset 2}${color0}${font ConkyColors:size=15}t${font}${color}${goto 32}${voffset -12}Down: ${font SFNS Display:style=Bold:size=8}${color1}${downspeed ppp0}${color}${font} ${alignr}${color2}${downspeedgraph ppp0 8,60 FFFFFF}${color}
-${goto 32}Total: ${font SFNS Display:style=Bold:size=8}${color2}${totaldown ppp0}${color}${font}
-${voffset 2}${color0}${font ConkyColors:size=15}B${font}${color}${goto 32}${voffset -6}Local IP: ${alignr}${color2}${addr ppp0}${color}
-${else}${voffset 4}${color0}${font ConkyColors:size=15}q${font}${color}${voffset -6}${goto 32}Network Unavailable${voffset 14}${endif}${endif}${endif}${endif}
-##################
-# - BBCWEATHER - #
-##################
-# http://news.bbc.co.uk/weather/
-${voffset -8}${font SFNS Display:style=Bold:size=8}WEATHER $stippled_hr${font}
-${if_gw}${voffset 4}${color0}${font ConkyColors:size=16}8${font}${color}
-${voffset -24}${goto 32}Temperature: ${font SFNS Display:style=Bold:size=8}${color1}${execi 600 /usr/share/conkycolors/bin/conkyBBCWeather cur 1259229 c}°C${color}${font}
-${goto 32}${color0}${font ConkyColors:size=8}w${font}${color}${font SFNS Display:style=Bold:size=8}${voffset -1}${color1}${execi 600 /usr/share/conkycolors/bin/conkyBBCWeather min 1259229 c}°C${color}${font}  ${color0}${font ConkyColors:size=8}x${font}${color}${voffset -1}${font SFNS Display:style=Bold:size=8}${color1}${execi 600 /usr/share/conkycolors/bin/conkyBBCWeather max 1259229 c}°C${color}${font}
-${goto 32}Humidity: ${font SFNS Display:style=Bold:size=8}${color1}${execi 600 /usr/share/conkycolors/bin/conkyBBCWeather hum 1259229 c}%${color}${font}${alignr}${color2}${execbar /usr/share/conkycolors/bin/conkyBBCWeather hum 1259229 c}%${color}${font}
-${else}${voffset 4}${color0}${font ConkyColors:size=15}q${font}${color}${voffset -6}${goto 32}Weather Unavailable${voffset 14}${endif}
-############
-# - TASK - #
-############
-# type "ct help" in terminal for info
-${voffset 4}${font Liberation Sans:style=Bold:size=8}TASK $stippled_hr${font}
-${voffset 4}${execpi 5 cat ~/.conkycolors/tasks | fold -w 38 | sed 's/\[ \]/\[     \]/' | sed 's/\[X\]/\[ X \]/' | sed 's/\] /\] ${color2}/' | sed 's/$/${color}/' | sed 's/ X /${color0}${font ConkyColors:size=11}p${font}${color}${voffset -5}/'}
+${color a7a7a7}${font Coda:size=40}${time %k:%M}${font}${color}
+${voffset -44}$alignr${time %a}
+$alignr${time %D}
+
+${color a7a7a7}Kernel:${color}$alignr$kernel
+${color a7a7a7}UpTime:${color}$alignr$uptime
+
+P R O C E S S O R
+${hr}
+${color a7a7a7}Cpu1:${color}${offset 30}${cpu cpu1}%${color}
+${cpugraph cpu1 20,85 556B2F 9ACD32}
+${voffset -54}${offset 112}${color a7a7a7}Cpu2:${color}${offset 30}${cpu cpu2}% ${color}
+$alignr${cpugraph cpu2 20,85 556B2F 9ACD32}
+${color a7a7a7}Cpu3:${color}${offset 30}${cpu cpu2}%${color}
+${cpugraph cpu2 20,85 556B2F 9ACD32}
+${voffset -54}${offset 112}${color a7a7a7}Cpu4:${color}${offset 30}${cpu cpu3}%${color}
+$alignr${cpugraph cpu3 20,85 556B2F 9ACD32}${color}
+
+M E M O R Y
+${hr}
+${color a7a7a7}Ram:$alignr${color FEA63C}$mem${color}/${color B7CE42}$memmax${color}
+${membar}
+
+H D D
+${hr}
+${color a7a7a7}Root:$alignr${color FEA63C}${fs_used /}${color}/${color B7CE42}${fs_free /}${color}
+${fs_bar /}
+
+N E T W O R K
+${hr}
+${if_up enp7s0}
+${color a7a7a7}Up:${color} ${upspeed enp7s0}KB/s${color}
+${upspeedgraph enp7s0 20,85 556B2F 9ACD32}
+${color a7a7a7}Total:${color} ${totalup enp7s0}
+${voffset -70}${offset 94}${color a7a7a7}Down:${color} ${downspeed enp7s0}KB/s
+$alignr${downspeedgraph enp7s0 20,85 556B2F 9ACD32}${color}
+$alignr${color a7a7a7}Total:${color} ${totaldown enp7s0}
+${else}${if_up wlp19s0}
+${color a7a7a7}Up:${color} ${upspeed wlp19s0}KB/s${color}
+${upspeedgraph wlp19s0 20,85 556B2F 9ACD32}
+${color a7a7a7}Total:${color} ${totalup wlp19s0}
+${voffset -70}${offset 94}${color a7a7a7}Down:${color} ${downspeed wlp19s0}KB/s
+$alignr${downspeedgraph wlp19s0 20,85 556B2F 9ACD32}${color}
+$alignr${color a7a7a7}Total:${color} ${totaldown wlp19s0}
+${endif}
