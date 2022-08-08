@@ -41,7 +41,8 @@ super + shift + k
     i3-msg move up
 super + shift + l
     i3-msg move right
-
+super + t
+    i3-msg split toggle
 super + f
     i3-msg fullscreen toggle
 super + v
@@ -52,7 +53,22 @@ super + shift + space
     i3-msg fullscreen toggle
 super + space
     i3-msg focus mode_toggle
+super + Tab
+    i3-msg workspace back_and_forth
+super + o
+    i3-msg sticky toggle
 
+##########
+# RESIZE #
+##########
+super + shift + y
+    i3resize left
+super + shift + u
+    i3resize down
+super + shift + i
+    i3resize up
+super + shift + o
+    i3resize right
 
 ##############
 # Audio Keys #
@@ -82,7 +98,7 @@ super + shift + BackSpace
     prompt "Reboot?" "sudo -A reboot"
 
 super + x
-    xset dpms force off && loginctl lock-session
+    xset dpms force off
 
 super + shift + e
     prompt "Logout and Exit i3?" "i3-msg exit"
