@@ -1,0 +1,8 @@
+xcompmgr &
+unclutter &
+dunst &
+setbg &
+sxhkd &
+xset r rate 300 50 &
+xinput set-prop 12 347 1
+source ~/.profile
