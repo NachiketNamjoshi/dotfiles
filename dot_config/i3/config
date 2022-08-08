@@ -8,6 +8,7 @@ set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 set $hibernate sudo -A systemctl suspend
 
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+exec --no-startup-id xss-lock --transfer-sleep-lock -- slock
 
 ## No borders pls.
 for_window [class="^.*"] border pixel 1
