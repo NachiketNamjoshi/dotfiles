@@ -1,0 +1,109 @@
+##################
+# i3 and windows #
+##################
+super + q
+    i3-msg kill
+super + shift + r
+    i3-msg restart
+
+## Focus ##
+super + h
+    i3-msg focus left
+super + j
+    i3-msg focus down
+super + k
+    i3-msg focus up
+super + l
+    i3-msg focus right
+super + left
+    i3-msg focus left
+super + down
+    i3-msg focus down
+super + up
+    i3-msg focus up
+super + right
+    i3-msg focus right
+
+## Move ##
+super + shift + left
+    i3-msg move left
+super + shift + j
+    i3-msg move down
+super + shift + k
+    i3-msg move up
+super + shift + l
+    i3-msg move right
+super + shift + shift + h
+    i3-msg move left
+super + shift + j
+    i3-msg move down
+super + shift + k
+    i3-msg move up
+super + shift + l
+    i3-msg move right
+
+super + f
+    i3-msg fullscreen toggle
+super + v
+    i3-msg layout default
+super + shift + v
+    i3-msg layout tabbed
+super + shift + space
+    i3-msg fullscreen toggle
+super + space
+    i3-msg focus mode_toggle
+
+
+##############
+# Audio Keys #
+##############
+@XF86Audio{Raise,Lower}Volume
+    pactl set-sink-volume @DEFAULT_SINK@ {+,-}10% && pkill -RTMIN+10 i3blocks
+
+@XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks
+
+@XF86Audio{Play,Next,Prev}
+    playerctl {play-pause,next,previous}
+
+##############
+# Brightness #
+##############
+@XF86MonBrightness{Up,Down}
+    sudo ybacklight -{inc,dec} 5 && pkill -RTMIN+11 i3blocks
+
+####################
+# Regular routines #
+####################
+super + shift + x
+    prompt "Shutdown?" "sudo -A shutdown -h now"
+
+super + shift + BackSpace
+    prompt "Reboot?" "sudo -A reboot"
+
+super + x
+    xset dpms force off && loginctl lock-session
+
+super + shift + e
+    prompt "Logout and Exit i3?" "i3-msg exit"
+
+super + F2
+    prompt "Restart i3 inplace?" "i3-msg restart" && pkill -USR1 -x sxhkd
+
+################
+# Regular Apps #
+################
+
+super + Return
+    $TERMINAL 2>/dev/null
+
+super + w
+    $BROWSER
+
+super + d
+    dmenu_run
+
+super + shift + a
+    $TERMINAL -e pulsemixer
+
+# vim:ft=sxhkdrc
