@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Prints the current volume or 🔇 if muted.
+
+case $BLOCK_BUTTON in
+    1) i3-gnome-pomodoro toggle && notify-send "⏺️  Pomodoro" "$(i3-gnome-pomodoro status)" ;;
+	2) i3-gnome-pomodoro skip && notify-send "⏺️  Pomodoro" "\- Skipped current activity.
+- Status: $(i3-gnome-pomodoro status)" ;;
+	3) notify-send "⏺️  Pomodoro" "\- Shows current pomodoro status.
+- Middle click to mute.
+- Scroll to change." ;;
+esac
+
+[ $(pamixer --get-mute) = true ] && echo 🔇 && exit
+
+vol="$(pamixer --get-volume)"
+
+icon="⏺️ "
+echo "$icon $(i3-gnome-pomodoro status)"

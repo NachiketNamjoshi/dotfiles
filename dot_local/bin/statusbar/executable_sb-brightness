@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Prints the current brightness
+
+case $BLOCK_BUTTON in
+        4) sudo ybacklight -inc 1 ;;
+        5) sudo ybacklight -dec 1 ;;
+        3) notify-send "🌒 Brightness module" "\- Shows brightness 🌒.
+- Scroll to change." ;;
+        6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+brightness=`printf "%.0f\n" $(ybacklight -get)`
+
+if [ "$brightness" -gt "70" ]; then
+        icon="🌝"
+elif [ "$brightness" -gt "50" ]; then
+        icon="🌔"
+elif [ "$brightness" -lt "30" ]; then
+        icon="🌒"
+else
+        icon="🌓"
+fi
+
+printf "%s %s%%\\n" "$icon" "$brightness"
