@@ -17,46 +17,48 @@ for_window [class="^.*"] border pixel 1
 set_from_resource $background color0  #000000
 set_from_resource $separator  color5  #eeeeee
 set_from_resource $foreground color15 #eeeeee
-
+ 
 # Workspace colors
-
+ 
 # Focused workspace
 set_from_resource $focused_border     color5  #4c7899
 set_from_resource $focused_background color5  #285577
 set_from_resource $focused_text       color15 #ffffff
-
+ 
 # Active workspace
 set_from_resource $active_border     color14 #333333
 set_from_resource $active_background color8  #5f676a
 set_from_resource $active_text       color15 #ffffff
-
+ 
 # Inactive workspace
 set_from_resource $inactive_border     color0  #333333
 set_from_resource $inactive_background color0  #222222
 set_from_resource $inactive_text       color15 #888888
-
+ 
 # Urgent workspace
 set_from_resource $urgent_border     color9  #2f343a
 set_from_resource $urgent_background color9  #900000
 set_from_resource $urgent_text       color15 #ffffff
-
+ 
 bar {
 	font pango:monospace 9
 	status_command i3blocks
 	position top
 	mode dock
 	modifier None
+  strip_workspace_numbers yes
+  workspace_min_width 40
 	colors {
 		background $background
 		separator  $separator
 		statusline $foreground
-
+ 
 		focused_workspace  $focused_border  $focused_background  $focused_text
 		active_workspace   $active_border   $active_background   $active_text
 		inactive_workspace $inactive_border $inactive_background $inactive_text
 		urgent_workspace    $urgent_border  $urgent_background   $urgent_text
-	}
-}
+	} 
+} 
 
 ################################
 ##### Gruvbox Material Dark ####
@@ -107,16 +109,16 @@ client.urgent           $red        $red        $bg     $red        $red
 client.placeholder      $bg         $bg         $bg     $bg         $bg
 client.background       $bg
 
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "1:CODE"
+set $ws2 "2:WEB"
+set $ws3 "3:TERM"
+set $ws4 "4:GUI"
+set $ws5 "5:CEN"
+set $ws6 "6:PLAY"
+set $ws7 "7:SIDE"
+set $ws8 "8:PRIV"
+set $ws9 "9:TUX"
+set $ws10 "10:BG"
 
 # switch to workspace
 bindsym $mod+1		workspace $ws1
