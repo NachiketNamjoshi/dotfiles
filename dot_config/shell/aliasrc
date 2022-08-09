@@ -50,7 +50,24 @@ alias \
 	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
 	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" \
 
-alias reload="omz reload"
+alias reload="source $ZDOTDIR/.zshrc"
+
+alias vz="$EDITOR ~/.config/zsh/.zshrc"
+alias vza="$EDITOR ~/.config/shell/aliasrc"
+alias vv="$EDITOR ~/.config/nvim/init.lua"
+alias vt="$EDITOR ~/.config/alacritty/alacritty.yml"
+
+#####################
+### FUNCTIONS #######
+#####################
+
+urlencode() {
+  php -r "echo urlencode('$1');"
+}
+
+urldecode() {
+  php -r "echo urldecode('$1');"
+}
 
 bindkey -s '^o' 'lfcd\n'
 bindkey -s '^a' 'bc\n'
