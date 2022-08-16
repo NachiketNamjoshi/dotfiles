@@ -7,40 +7,29 @@ super + shift + r
     i3-msg restart
 
 ## Focus ##
-super + h
+super + {h, Left}
     i3-msg focus left
-super + j
+super + {j, Down}
     i3-msg focus down
-super + k
+super + {k, Up}
     i3-msg focus up
-super + l
+super + {l, Right}
     i3-msg focus right
-super + left
+super + shift + Tab
     i3-msg focus left
-super + down
-    i3-msg focus down
-super + up
-    i3-msg focus up
-super + right
-    i3-msg focus right
+
 
 ## Move ##
-super + shift + left
-    i3-msg move left
-super + shift + j
+super + shift + {j, Down}
     i3-msg move down
-super + shift + k
+super + shift + {k, Up}
     i3-msg move up
-super + shift + l
+super + shift + {l, Right}
     i3-msg move right
-super + shift + shift + h
+super + shift + {h, Left}
     i3-msg move left
-super + shift + j
-    i3-msg move down
-super + shift + k
-    i3-msg move up
-super + shift + l
-    i3-msg move right
+
+# Other Window Management
 super + t
     i3-msg split toggle
 super + f
