@@ -63,10 +63,10 @@ super + shift + o
 # Audio Keys #
 ##############
 @XF86Audio{Raise,Lower}Volume
-    pactl set-sink-volume @DEFAULT_SINK@ {+,-}10% && pkill -RTMIN+10 i3blocks
+    pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%; pkill -RTMIN+10 i3blocks
 
 @XF86AudioMute
-    pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks
+    pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+10 i3blocks
 
 @XF86Audio{Play,Next,Prev}
     playerctl {play-pause,next,previous}
@@ -75,7 +75,7 @@ super + shift + o
 # Brightness #
 ##############
 @XF86MonBrightness{Up,Down}
-    sudo ybacklight -{inc,dec} 5 && pkill -RTMIN+11 i3blocks
+    sudo ybacklight -{inc,dec} 5; pkill -RTMIN+11 i3blocks
 
 ####################
 # Regular routines #
