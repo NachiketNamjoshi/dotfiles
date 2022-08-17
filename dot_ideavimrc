@@ -1,0 +1,61 @@
+""" Basic Config
+set clipboard+=unnamed
+set clipboard+=ideaput
+let mapleader=","
+set hlsearch
+set incsearch
+set ignorecase smartcase
+set showmode
+set visualbell
+set scrolloff = 10
+
+""" IdeaVim
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+""" Plugins
+set multiple-cursors
+set NERDTree
+set easymotion
+
+nnoremap <leader>n :NERDTreeToggle<cr>
+
+""" Window splits
+nnoremap <c-\> :action SplitVertically<CR>
+nnoremap <c--> :action SplitHorizontally<CR>
+nnoremap <c-=> :action Unsplit<CR>
+nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+
+""" Set IdeaVim as handler for c-j and c-k
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+
+""" Window navigation
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+
+""" Debug
+nnoremap <leader>b :action ToggleLineBreakpoint<CR>
+nnoremap <leader>d :action Debug<cr>
+nnoremap <leader>c :action Stop<cr>
+
+""" Code
+nnoremap <leader>r :action Refactorings.QuickListPopupAction<CR>
+nnoremap <leader>o :action OptimizeImports<CR>
+
+""" Code navigation
+nnoremap <c-p> :action GotoFile<CR>
+nnoremap <c-f> :action FindInPath<CR>
+
+nnoremap gc :action GotoClass<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gp :action GotoSuperMethod<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+
+""" Term
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+nnoremap <c-x> :action HideAllWindows<CR>
