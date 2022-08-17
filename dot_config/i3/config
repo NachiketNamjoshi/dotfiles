@@ -14,31 +14,31 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- slock
 for_window [class="^.*"] border pixel 1
 
 # Statusbar colors
-set_from_resource $background color0  #000000
-set_from_resource $separator  color5  #eeeeee
-set_from_resource $foreground color15 #eeeeee
+set_from_resource $background color0  #212121
+set_from_resource $separator  color5  #8c9440
+set_from_resource $foreground color15 #faf8ff
  
 # Workspace colors
  
 # Focused workspace
-set_from_resource $focused_border     color5  #4c7899
-set_from_resource $focused_background color5  #285577
-set_from_resource $focused_text       color15 #ffffff
+set_from_resource $focused_border     color5  #32888b
+set_from_resource $focused_background color5  #068488
+set_from_resource $focused_text       color15 #faf8ff
  
 # Active workspace
-set_from_resource $active_border     color14 #333333
-set_from_resource $active_background color8  #5f676a
-set_from_resource $active_text       color15 #ffffff
+set_from_resource $active_border     color14 #212121
+set_from_resource $active_background color8  #707880
+set_from_resource $active_text       color15 #faf8ff
  
 # Inactive workspace
-set_from_resource $inactive_border     color0  #333333
-set_from_resource $inactive_background color0  #222222
-set_from_resource $inactive_text       color15 #888888
+set_from_resource $inactive_border     color0  #212020
+set_from_resource $inactive_background color0  #626870
+set_from_resource $inactive_text       color15 #faf8ff
  
 # Urgent workspace
-set_from_resource $urgent_border     color9  #2f343a
-set_from_resource $urgent_background color9  #900000
-set_from_resource $urgent_text       color15 #ffffff
+set_from_resource $urgent_border     color9  #3d282b
+set_from_resource $urgent_background color9  #623033
+set_from_resource $urgent_text       color15 #fbb566
  
 bar {
 	font pango:monospace 9
@@ -63,15 +63,15 @@ bar {
 ################################
 ##### Gruvbox Material Dark ####
 ################################
-set $bg       #282828
-set $fg       #d4be98
-set $red      #ea6962
-set $orange   #e78a4e
-set $green    #a9b665
-set $blue     #7daea3
-set $purple   #d3869b
-set $aqua     #89b482
-set $darkgray #282828
+set $bg       #212121
+set $fg       #faf8ff
+set $red      #99412f
+set $orange   #de935f
+set $green    #8c9440
+set $blue     #32888b
+set $purple   #815d7b
+set $aqua     #068488
+set $darkgray #707880
 
 ##############
 ##### BAR ####
@@ -102,12 +102,12 @@ set $darkgray #282828
 ##### i3 appearance ####
 ########################
 ##       Gruvbox Theme   brdr        bg          text    indictr     chld_brdr
-client.focused          $orange     $orange     $bg     $orange     $orange
-client.focused_inactive $aqua       $aqua       $bg     $aqua       $aqua
-client.unfocused        $bg         $bg         $bg     $bg         $bg
-client.urgent           $red        $red        $bg     $red        $red
-client.placeholder      $bg         $bg         $bg     $bg         $bg
-client.background       $bg
+#client.focused          $orange     $orange     $bg     $orange     $orange
+#client.focused_inactive $aqua       $aqua       $bg     $aqua       $aqua
+#client.unfocused        $bg         $bg         $bg     $bg         $bg
+#client.urgent           $red        $red        $bg     $red        $red
+#client.placeholder      $bg         $bg         $bg     $bg         $bg
+#client.background       $bg
 
 set $ws1 "1:CODE"
 set $ws2 "2:WEB"
