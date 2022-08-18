@@ -16,7 +16,7 @@ se() { cd ~/.local/bin; $EDITOR $(fzf) ;}
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
 	cp="cp -rv" \
-	mv="mv -rv" \
+	mv="mv -v" \
 	rm="rm -vI" \
 	bc="bc -ql" \
 	mkd="mkdir -pv" \
@@ -54,8 +54,10 @@ alias reload="source $ZDOTDIR/.zshrc"
 
 alias vz="$EDITOR ~/.config/zsh/.zshrc"
 alias vza="$EDITOR ~/.config/shell/aliasrc"
+alias vzua="$EDITOR ~/.config/shell/useralias"
 alias vv="$EDITOR ~/.config/nvim/init.lua"
 alias vt="$EDITOR ~/.config/alacritty/alacritty.yml"
+alias cfi="$EDITOR ~/.config/i3/config"
 
 #####################
 ### FUNCTIONS #######
@@ -71,3 +73,5 @@ urldecode() {
 
 bindkey -s '^o' 'lfcd\n'
 bindkey -s '^a' 'bc\n'
+
+source $XDG_CONFIG_HOME/shell/useralias
