@@ -102,6 +102,9 @@ super + F2
 super + Return
     $TERMINAL 2>/dev/null
 
+super + shift Return
+    $TERMINAL -e tmux attach 2>/dev/null
+
 super + w
     $BROWSER
 
