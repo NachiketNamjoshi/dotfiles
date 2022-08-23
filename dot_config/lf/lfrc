@@ -4,7 +4,7 @@ set ifs "\n"
 set scrolloff 10
 set icons
 set period 1
-
+set drawbox
 map g top
 map D delete
 map E extract
