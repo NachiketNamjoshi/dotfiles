@@ -50,11 +50,12 @@ alias \
 	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
 	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" \
 
-alias reload="source $ZDOTDIR/.zshrc"
+alias reload="omz reload"
 
 alias vz="$EDITOR ~/.config/zsh/.zshrc"
 alias vza="$EDITOR ~/.config/shell/aliasrc"
 alias vzua="$EDITOR ~/.config/shell/useralias"
+alias vsx="$EDITOR ~/.config/sxhkd/sxhkdrc"
 alias vv="$EDITOR ~/.config/nvim/init.lua"
 alias vt="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias cfi="$EDITOR ~/.config/i3/config"
@@ -69,6 +70,17 @@ urlencode() {
 
 urldecode() {
   php -r "echo urldecode('$1');"
+}
+
+
+lfcd () {
+    tmp="$(mktemp -uq)"
+    trap 'rm -f $tmp >/dev/null 2>&1' HUP INT QUIT TERM PWR EXIT
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
 }
 
 bindkey -s '^o' 'lfcd\n'
