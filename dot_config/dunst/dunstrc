@@ -9,19 +9,21 @@
     transparency = 25
     font = Monospace 12
     format = "<b>%s</b>\n%b"
+    notification_limit = 0
+    frame_color = "#32888b"
 
 [urgency_low]
-    background = "#1d2021"
-    foreground = "#928374"
+    background = "#212121"
+    foreground = "#faf8ff"
     timeout = 3
 
 [urgency_normal]
-    foreground = "#ebdbb2"
-    background = "#458588"
+    background = "#212121"
+    foreground = "#d6e4ff"
     timeout = 5
 
 [urgency_critical]
-    background = "#1cc24d"
-    foreground = "#ebdbb2"
-    frame_color = "#fabd2f"
+    background = "#623033"
+    foreground = "#d6806e"
+    frame_color = "#99412f"
     timeout = 10
