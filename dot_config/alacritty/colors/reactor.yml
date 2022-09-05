@@ -1,21 +1,38 @@
 colors:
-  # Default colors
   primary:
     background: '#212121'
     foreground: '#faf8ff'
-
-  # Normal colors
+  cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  vi_mode_cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  search:
+    matches:
+      foreground: '#faf8ff'
+      background: '#32888b'
+    focused_match:
+     foreground: CellBackground
+     background: CellForeground
+    bar:
+      foreground: '#faf8ff'
+      background: '#32888b'
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text:       CellBackground
+    background: CellForeground
   normal:
     black:   '#212121'
     red:     '#99412f'
-    green:   '#ca904f'
+    green:   '#8c9440'
     yellow:  '#de935f'
     blue:    '#32888b'
     magenta: '#815d7b'
     cyan:    '#068488'
     white:   '#707880'
-
-  # Bright colors
   bright:
     black:   '#373b41'
     red:     '#d6806e'
