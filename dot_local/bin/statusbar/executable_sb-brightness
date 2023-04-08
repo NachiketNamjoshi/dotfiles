@@ -13,13 +13,13 @@ esac
 brightness=`printf "%.0f\n" $(ybacklight -get)`
 
 if [ "$brightness" -gt "70" ]; then
-        icon="🌝"
+        icon=""
 elif [ "$brightness" -gt "50" ]; then
-        icon="🌔"
+        icon=""
 elif [ "$brightness" -lt "30" ]; then
-        icon="🌒"
+        icon=""
 else
-        icon="🌓"
+        icon=""
 fi
 
-printf "%s %s%%\\n" "$icon" "$brightness"
+printf " %s  %s%% \\n" "$icon" "$brightness"
