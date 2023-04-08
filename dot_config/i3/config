@@ -9,39 +9,35 @@ set $hibernate sudo -A systemctl suspend
 
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id xss-lock --transfer-sleep-lock -- slock
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id /home/nachiket/.local/bin/showkeys
+
+font pango:Monospace Bold 8.5
 
 ## No borders pls.
 for_window [class="^.*"] border pixel 1
 
 # Statusbar colors
-set_from_resource $background color0  #212121
-set_from_resource $separator  color5  #8c9440
-set_from_resource $foreground color15 #faf8ff
- 
+set_from_resource $background color0  #1d2021
+set_from_resource $separator  color5  #83a598
+set_from_resource $foreground color15 #ebdbb2
+
 # Workspace colors
- 
 # Focused workspace
-set_from_resource $focused_border     color5  #32888b
-set_from_resource $focused_background color5  #068488
-set_from_resource $focused_text       color15 #faf8ff
+set_from_resource $focused       color15 #fabd2f
  
 # Active workspace
-set_from_resource $active_border     color14 #212121
-set_from_resource $active_background color8  #707880
-set_from_resource $active_text       color15 #faf8ff
+set_from_resource $active       color15 #d5c4a1
  
 # Inactive workspace
-set_from_resource $inactive_border     color0  #212020
-set_from_resource $inactive_background color0  #626870
-set_from_resource $inactive_text       color15 #faf8ff
+set_from_resource $inactive       color15 #a89984
  
 # Urgent workspace
-set_from_resource $urgent_border     color9  #3d282b
-set_from_resource $urgent_background color9  #623033
-set_from_resource $urgent_text       color15 #fbb566
+set_from_resource $urgent     color9  #fe8019
  
 bar {
-	font pango:monospace 9
+	font pango:Monospace Bold 8.5
 	status_command i3blocks
 	position top
 	mode dock
@@ -53,70 +49,42 @@ bar {
 		separator  $separator
 		statusline $foreground
  
-		focused_workspace  $focused_border  $focused_background  $focused_text
-		active_workspace   $active_border   $active_background   $active_text
-		inactive_workspace $inactive_border $inactive_background $inactive_text
-		urgent_workspace    $urgent_border  $urgent_background   $urgent_text
+		focused_workspace  $background  $background  $focused
+		active_workspace   $background   $background   $active
+		inactive_workspace $background $background $inactive
+		urgent_workspace    $background  $background   $urgent
 	} 
 } 
 
-################################
-##### Gruvbox Material Dark ####
-################################
-set $bg       #212121
-set $fg       #faf8ff
-set $red      #99412f
-set $orange   #de935f
-set $green    #8c9440
-set $blue     #32888b
-set $purple   #815d7b
-set $aqua     #068488
-set $darkgray #707880
-
-##############
-##### BAR ####
-##############
-#bar {
-#	font pango:monospace 9
-#	status_command i3blocks
-#	position top
-#	mode dock
-#	modifier None
-#    colors {
-#            # bar background color
-#            background $bg
-#            # text color used for blocks that do not have a color specified.
-#            statusline $fg
-
-#            # workspaces section
-#            #                    border     backgr.     text
-#            focused_workspace    $orange    $orange     $bg
-#            inactive_workspace   $bg        $aqua       $bg
-#            active_workspace     $bg        $blue       $bg
-#            urgent_workspace     $red       $red        $fg
-
-#        }
-#}
-
+#######################
+##### theme basics ####
+#######################
+set $bg       #1d2021
+set $fg       #fabd2f
+set $red      #cc241d
+set $purple   #b16286
+set $aqua     #689d6a
+set $darkgray #928374
+set $lightbg  #3c3836
 ########################
 ##### i3 appearance ####
 ########################
-##       Gruvbox Theme   brdr        bg          text    indictr     chld_brdr
-#client.focused          $orange     $orange     $bg     $orange     $orange
-#client.focused_inactive $aqua       $aqua       $bg     $aqua       $aqua
-#client.unfocused        $bg         $bg         $bg     $bg         $bg
-#client.urgent           $red        $red        $bg     $red        $red
-#client.placeholder      $bg         $bg         $bg     $bg         $bg
-#client.background       $bg
+#       Gruvbox Theme   brdr        bg          text    indictr     chld_brdr
+client.focused          $lightbg     $lightbg         $fg     $aqua  $aqua
+client.focused_inactive $aqua       $aqua       $fg     $aqua       $bg
+client.unfocused        $bg         $bg         $darkgray     $bg         $bg
+client.urgent           $red        $red        $bg     $red        $red
+client.placeholder      $bg         $bg         $bg     $bg         $bg
+client.background       $bg
 
 set $ws1 "1:CODE"
-set $ws2 "2:WEB"
+set $ws2 "2:WWW"
 set $ws3 "3:TERM"
 set $ws4 "4:GUI"
-set $ws5 "5:CEN"
+set $ws5 "5:MISC"
 set $ws6 "6:PLAY"
-set $ws7 "7:SIDE"
-set $ws8 "8:PRIV"
+set $ws7 "7:OTR"
+set $ws8 "8:PASS"
 set $ws9 "9:TUX"
 set $ws10 "10:BG"
 

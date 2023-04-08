@@ -1,38 +1,67 @@
 command=~/.local/bin/statusbar/sb-$BLOCK_NAME
-separator_block_width=15
+separator_block_width=0
+full_text="<span bgcolor='#1d2021' fgcolor='#664c54' size='12000'></span>"
 markup=pango
+separator=false
+border_top=0
+border_bottom=0
+border_right=0
+border_left=0
+
+[separator]
 
 [pacpackages]
 interval=once
 signal=8
 
+[separator]
+
 [brightness]
+interval=once
 signal=11
+
+[separator]
 
 [memory]
 interval=30
 
+[separator]
+
 [cpubars]
 interval=15
+
+[separator]
 
 [volume]
 interval=once
 signal=10
 
+[separator]
+
 [disk]
 interval=60
 command=sb-disk /
+
+[separator]
 
 [disk]
 interval=60
 command=sb-disk /home
 
+[separator]
+
 [battery]
 interval=11
 
+[separator]
+
 [clock]
-label=📅
 interval=30
+label=   
+
+[separator]
 
 [internet]
 interval=10
+
+[separator]
