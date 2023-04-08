@@ -59,6 +59,8 @@ alias vsx="$EDITOR ~/.config/sxhkd/sxhkdrc"
 alias vv="$EDITOR ~/.config/nvim/init.lua"
 alias vt="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias cfi="$EDITOR ~/.config/i3/config"
+# alias tlmgr="$TEXMFDIST/scripts/texlive/tlmgr.pl --usermode"
+alias tlmgr="/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode"
 
 #####################
 ### FUNCTIONS #######
@@ -83,7 +85,27 @@ lfcd () {
     fi
 }
 
+mkdate () {
+  base=$1
+  foldername="$1-$(date +%Y-%m-%d)"
+  mkdir -p $foldername
+}
+
+killprog () {
+  prog=$1
+  kill -9 $(ps -aux | grep $prog | awk '{ print $2 }')
+}
+
+
+#########
+# PAGER #
+#########
+alias csvr="ov -H1 -d',' -c --column-rainbow"
+
 bindkey -s '^o' 'lfcd\n'
 bindkey -s '^a' 'bc\n'
+bindkey -s '^c' 'kill-line'
 
 source $XDG_CONFIG_HOME/shell/useralias
+source $XDG_CONFIG_HOME/shell/docker
+source $XDG_CONFIG_HOME/shell/kubectl
