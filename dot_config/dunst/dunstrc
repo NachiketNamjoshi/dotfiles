@@ -10,20 +10,21 @@
     font = Monospace 12
     format = "<b>%s</b>\n%b"
     notification_limit = 0
-    frame_color = "#32888b"
+    frame_color = "#7c6f64"
+    separator_color= frame
 
 [urgency_low]
-    background = "#212121"
-    foreground = "#faf8ff"
+    background = "#1d2021"
+    foreground = "#ebdbb2"
     timeout = 3
 
 [urgency_normal]
-    background = "#212121"
-    foreground = "#d6e4ff"
+    background = "#1d2021"
+    foreground = "#ebdbb2"
     timeout = 5
 
 [urgency_critical]
-    background = "#623033"
-    foreground = "#d6806e"
-    frame_color = "#99412f"
+    background = "#cc241d"
+    foreground = "#ebdbb2"
+    frame_color = "#fe8019"
     timeout = 10
