@@ -2,7 +2,7 @@
 colors:
   primary:
     # hard contrast background - '#1d2021'
-    background:        &gruvbox_dark_bg '#282828'
+    background:        &gruvbox_dark_bg '#1d2021'
     # soft contrast background - '#32302f'
     foreground:        '#ebdbb2'
     bright_foreground: '#fbf1c7'
@@ -13,6 +13,9 @@ colors:
   vi_mode_cursor:
     text:   CellBackground
     cursor: CellForeground
+  footer_bar:
+    foreground: '#ffffff'
+    background: '#076678'
   search:
     matches:
       foreground: '#ffffff'
@@ -20,9 +23,6 @@ colors:
     focused_match:
      foreground: CellBackground
      background: CellForeground
-    bar:
-      foreground: '#ffffff'
-      background: '#076678'
   line_indicator:
     foreground: None
     background: None

@@ -10,7 +10,8 @@
 # to the user's home directory starting with `~/`.
 import:
  - ~/.config/alacritty/env.yml
- - ~/.config/alacritty/colors/reactor.yml
+ - ~/.config/alacritty/colors/gruvbox.yml
+ # - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -69,7 +70,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.85
+  opacity: 0.8
 
   # Startup Mode (changes require restart)
   #
@@ -331,7 +332,7 @@ draw_bold_text_with_bright_colors: true
   # Whether or not `window.opacity` applies to all cell backgrounds or only to
   # the default background. When set to `true` all cells will be transparent
   # regardless of their background color.
-  #transparent_background_colors: false
+# transparent_background_colors: false
 
 # Bell
 #

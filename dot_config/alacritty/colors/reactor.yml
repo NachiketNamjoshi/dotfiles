@@ -15,9 +15,9 @@ colors:
     focused_match:
      foreground: CellBackground
      background: CellForeground
-    bar:
-      foreground: '#faf8ff'
-      background: '#32888b'
+  footer_bar:
+    foreground: '#faf8ff'
+    background: '#32888b'
   line_indicator:
     foreground: None
     background: None
