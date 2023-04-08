@@ -39,7 +39,7 @@ super + v
 super + shift + v
     i3-msg layout tabbed
 super + shift + space
-    i3-msg fullscreen toggle
+    i3-msg floating toggle
 super + space
     i3-msg focus mode_toggle
 super + Tab
