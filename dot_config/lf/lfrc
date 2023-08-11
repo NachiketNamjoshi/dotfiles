@@ -4,6 +4,8 @@ set ifs "\n"
 set scrolloff 10
 set icons
 set period 1
+set info size:time
+set dircounts
 set drawbox
 map g top
 map D delete
@@ -71,3 +73,4 @@ cmd zip ${{
     zip -r $1.zip $1
     rm -rf $1
 }}
+cmd mkdir %mkdir "$@"
