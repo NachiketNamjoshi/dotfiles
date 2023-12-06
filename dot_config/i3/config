@@ -19,22 +19,22 @@ font pango:Monospace Bold 8.5
 for_window [class="^.*"] border pixel 1
 
 # Statusbar colors
-set_from_resource $background color0  #1d2021
-set_from_resource $separator  color5  #83a598
-set_from_resource $foreground color15 #ebdbb2
+set_from_resource $background color0  #020221
+set_from_resource $separator  color5  #635196
+set_from_resource $foreground color15 #f8f8ff
 
 # Workspace colors
 # Focused workspace
-set_from_resource $focused       color15 #fabd2f
+set_from_resource $focused       color15 #f8f8ff
  
 # Active workspace
-set_from_resource $active       color15 #d5c4a1
+set_from_resource $active       color15 #f8f8ff
  
 # Inactive workspace
-set_from_resource $inactive       color15 #a89984
+set_from_resource $inactive       color15 #f8f8ff
  
 # Urgent workspace
-set_from_resource $urgent     color9  #fe8019
+set_from_resource $urgent     color9  #ff8e78
  
 bar {
 	font pango:Monospace Bold 8.5
@@ -49,29 +49,30 @@ bar {
 		separator  $separator
 		statusline $foreground
  
-		focused_workspace  $background  $background  $focused
+		focused_workspace  $background  $separator $focused
 		active_workspace   $background   $background   $active
 		inactive_workspace $background $background $inactive
 		urgent_workspace    $background  $background   $urgent
+    binding_mode        $background  $background  $urgent
 	} 
 } 
 
 #######################
 ##### theme basics ####
 #######################
-set $bg       #1d2021
-set $fg       #fabd2f
-set $red      #cc241d
-set $purple   #b16286
-set $aqua     #689d6a
-set $darkgray #928374
-set $lightbg  #3c3836
+set $bg       #020221
+set $fg       #f8f8ff
+set $red      #ff3600
+set $purple   #635196
+set $aqua     #99a4bc
+set $darkgray #b4b4b9
+set $lightbg  #020221
 ########################
 ##### i3 appearance ####
 ########################
 #       Gruvbox Theme   brdr        bg          text    indictr     chld_brdr
-client.focused          $lightbg     $lightbg         $fg     $aqua  $aqua
-client.focused_inactive $aqua       $aqua       $fg     $aqua       $bg
+client.focused          $purple         $purple         $fg     $aqua       $bg
+client.focused_inactive $aqua       $aqua       $bg     $aqua       $bg
 client.unfocused        $bg         $bg         $darkgray     $bg         $bg
 client.urgent           $red        $red        $bg     $red        $red
 client.placeholder      $bg         $bg         $bg     $bg         $bg
