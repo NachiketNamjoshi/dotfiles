@@ -96,6 +96,13 @@ killprog () {
   kill -9 $(ps -aux | grep $prog | awk '{ print $2 }')
 }
 
+testfont() {
+  echo "{x}[y](z)"
+  echo "q9g \(C *"
+  echo "iI1lL \"'"
+  echo "0Oo8.;,:"
+}
+
 
 #########
 # PAGER #
