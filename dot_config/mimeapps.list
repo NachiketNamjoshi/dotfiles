@@ -16,10 +16,10 @@ inode/directory=file.desktop
 x-scheme-handler/https=firefox.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/postman=Postman.desktop
-x-scheme-handler/tg=userapp-Telegram Desktop-MXX9W1.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
 x-scheme-handler/msteams=teams.desktop
 x-scheme-handler/webcal=chromium.desktop
 
 [Added Associations]
-x-scheme-handler/tg=userapp-Telegram Desktop-OSEBU1.desktop;userapp-Telegram Desktop-MXX9W1.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-OSEBU1.desktop;userapp-Telegram Desktop-MXX9W1.desktop;org.telegram.desktop.desktop;
 application/x-lz4=engrampa.desktop;
