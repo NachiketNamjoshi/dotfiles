@@ -114,4 +114,11 @@ super + d
 super + shift + a
     $TERMINAL -e pulsemixer
 
+#################
+# MISCELLENEOUS #
+#################
+super + grave
+  dmenuunicode
+
+
 # vim:ft=sxhkdrc
