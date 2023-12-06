@@ -24,3 +24,5 @@ HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 # User aliases
 # Load aliases and shortcuts if existent.
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
+[ -f "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh" 
+eval "$(atuin init zsh --disable-up-arrow)"
