@@ -10,6 +10,7 @@
 - lf
 - tmux
 - ov
+- exa
 
 # tmux
 You need [tmux plugin manager (tpm)](https://github.com/tmux-plugins/tpm)
