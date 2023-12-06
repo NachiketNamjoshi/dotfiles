@@ -9,6 +9,7 @@
 - fzf
 - lf
 - tmux
+- ov
 
 # tmux
 You need [tmux plugin manager (tpm)](https://github.com/tmux-plugins/tpm)
