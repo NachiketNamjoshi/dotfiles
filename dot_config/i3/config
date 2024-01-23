@@ -13,28 +13,24 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id /home/nachiket/.local/bin/showkeys
 
-font pango:Monospace Bold 8.5
+font pango:Monospace 8.5
 
 ## No borders pls.
 for_window [class="^.*"] border pixel 1
 
-# Statusbar colors
-set_from_resource $background color0  #020221
-set_from_resource $separator  color5  #635196
-set_from_resource $foreground color15 #f8f8ff
-
-# Workspace colors
-# Focused workspace
-set_from_resource $focused       color15 #f8f8ff
- 
-# Active workspace
-set_from_resource $active       color15 #f8f8ff
- 
-# Inactive workspace
-set_from_resource $inactive       color15 #f8f8ff
- 
-# Urgent workspace
-set_from_resource $urgent     color9  #ff8e78
+# set primary gruvbox colorscheme colors
+set $bg #010409
+set $abg #192b32
+set $ubg #332421
+set $fg #e6edf3
+set $fgalt #b1bac4
+set $red #e58f98
+set $yellow #b68e3b
+set $purple #ac85e5
+set $green #5aab71
+set $blue #59a6e5
+set $border #0f2c46
+set $rborder #492121
  
 bar {
 	font pango:Monospace Bold 8.5
@@ -44,39 +40,26 @@ bar {
 	modifier None
   strip_workspace_numbers yes
   workspace_min_width 40
-	colors {
-		background $background
-		separator  $separator
-		statusline $foreground
- 
-		focused_workspace  $background  $separator $focused
-		active_workspace   $background   $background   $active
-		inactive_workspace $background $background $inactive
-		urgent_workspace    $background  $background   $urgent
-    binding_mode        $background  $background  $urgent
-	} 
+  colors {
+        background $bg
+        statusline $fg
+        #                    border    backgr    text
+        focused_workspace    $border   $abg      $blue
+        inactive_workspace   $bg       $bg       $fgalt
+        active_workspace     $bg       $bg       $fgalt
+        urgent_workspace     $rborder  $ubg      $red
+  }
 } 
 
-#######################
-##### theme basics ####
-#######################
-set $bg       #020221
-set $fg       #f8f8ff
-set $red      #ff3600
-set $purple   #635196
-set $aqua     #99a4bc
-set $darkgray #b4b4b9
-set $lightbg  #020221
 ########################
 ##### i3 appearance ####
 ########################
-#       Gruvbox Theme   brdr        bg          text    indictr     chld_brdr
-client.focused          $purple         $purple         $fg     $aqua       $bg
-client.focused_inactive $aqua       $aqua       $bg     $aqua       $bg
-client.unfocused        $bg         $bg         $darkgray     $bg         $bg
-client.urgent           $red        $red        $bg     $red        $red
-client.placeholder      $bg         $bg         $bg     $bg         $bg
-client.background       $bg
+# target                 title     bg        text      indicator  border
+client.focused           $abg      $abg      $blue     $blue    $border
+client.focused_inactive  $bg       $bg       $fgalt    $blue    $bg
+client.unfocused         $bg       $bg       $fgalt    $blue    $bg
+client.urgent            $ubg      $ubg      $fg       $rborder      $rborder
+client.background        $bg
 
 set $ws1 "1:CODE"
 set $ws2 "2:WWW"

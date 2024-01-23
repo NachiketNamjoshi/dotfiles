@@ -1,6 +1,6 @@
 command=~/.local/bin/statusbar/sb-$BLOCK_NAME
 separator_block_width=0
-full_text="<span bgcolor='#020221' fgcolor='#b4b4b9' size='12000'></span>"
+full_text="<span fgcolor='#f6f8fa' bgcolor='#010409' size='12000'></span>"
 markup=pango
 separator=false
 border_top=0
