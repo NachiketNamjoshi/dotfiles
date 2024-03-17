@@ -19,18 +19,18 @@ font pango:Monospace 8.5
 for_window [class="^.*"] border pixel 1
 
 # set primary gruvbox colorscheme colors
-set $bg #010409
-set $abg #192b32
-set $ubg #332421
-set $fg #e6edf3
-set $fgalt #b1bac4
-set $red #e58f98
-set $yellow #b68e3b
-set $purple #ac85e5
-set $green #5aab71
-set $blue #59a6e5
-set $border #0f2c46
-set $rborder #492121
+set $bg #1d2021
+set $abg #282828
+set $ubg #9d0006
+set $fg #ebdbb2
+set $fgalt #a89984
+set $red #fb4934
+set $yellow #fabd2f
+set $purple #b16286
+set $green #689d6a
+set $blue #458588
+set $border #282828
+set $rborder #cc241d
  
 bar {
 	font pango:Monospace Bold 8.5
@@ -44,10 +44,10 @@ bar {
         background $bg
         statusline $fg
         #                    border    backgr    text
-        focused_workspace    $border   $abg      $blue
+        focused_workspace    $border   $abg      $yellow
         inactive_workspace   $bg       $bg       $fgalt
         active_workspace     $bg       $bg       $fgalt
-        urgent_workspace     $rborder  $ubg      $red
+        urgent_workspace     $rborder  $ubg      $fg
   }
 } 
 
@@ -55,9 +55,9 @@ bar {
 ##### i3 appearance ####
 ########################
 # target                 title     bg        text      indicator  border
-client.focused           $abg      $abg      $blue     $blue    $border
-client.focused_inactive  $bg       $bg       $fgalt    $blue    $bg
-client.unfocused         $bg       $bg       $fgalt    $blue    $bg
+client.focused           $abg      $abg      $yellow     $yellow    $border
+client.focused_inactive  $bg       $bg       $fgalt    $yellow    $bg
+client.unfocused         $bg       $bg       $fgalt    $yellow    $bg
 client.urgent            $ubg      $ubg      $fg       $rborder      $rborder
 client.background        $bg
 
