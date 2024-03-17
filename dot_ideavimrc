@@ -8,15 +8,27 @@ set ignorecase smartcase
 set showmode
 set visualbell
 set scrolloff = 10
+set rnu
+set which-key
+set notimeout
+set timeoutlen=5000
 
 """ IdeaVim
 nnoremap \e :e ~/.ideavimrc<CR>
 nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
 """ Plugins
+Plugin 'terryma/vim-multiple-cursors'
 set multiple-cursors
+
+Plug 'preservim/nerdtree'
 set NERDTree
-set easymotion
+
+Plug 'tpope/vim-commentary'
+set commentary
+
+Plug 'machakann/vim-highlightedyank'
+set highlightedyank
 
 nnoremap <leader>n :NERDTreeToggle<cr>
 
@@ -55,6 +67,15 @@ nnoremap gd :action GotoDeclaration<CR>
 nnoremap gp :action GotoSuperMethod<CR>
 nnoremap gb :action Back<CR>
 nnoremap gf :action Forward<CR>
+
+""" Basic Navigation
+nnoremap <leader>d <C-d>
+vnoremap <leader>d <C-d>
+nnoremap <leader>u <C-u>
+vnoremap <leader>u <C-u>
+
+vnoremap / :action Find<CR>
+nnoremap / :action Find<CR>
 
 """ Term
 nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
